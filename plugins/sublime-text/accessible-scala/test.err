@@ -1,0 +1,13 @@
+java.nio.file.NoSuchFileException: 2001 /home/gui/accessible-scala/lib/src/main/scala/ch.epfl.scala.accessible/Summary.scala
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214)
+	at java.nio.file.Files.newByteChannel(Files.java:361)
+	at java.nio.file.Files.newByteChannel(Files.java:407)
+	at java.nio.file.Files.readAllBytes(Files.java:3152)
+	at ch.epfl.scala.accessible.package$.parse(package.scala:9)
+	at ch.epfl.scala.accessible.Summary$.apply(Summary.scala:19)
+	at ch.epfl.scala.accessible.Summary$.apply(Summary.scala:13)
+	at ch.epfl.scala.accessible.Main$.main(Main.scala:38)
+	at ch.epfl.scala.accessible.Main.main(Main.scala)

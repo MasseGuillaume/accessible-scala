@@ -18,11 +18,12 @@ JNIEXPORT void JNICALL Java_ch_epfl_scala_accessible_espeak_Espeak_nativeSynthes
     isInitialized = true;
   }
 
-  const char *c_text = text ? (*env)->GetStringUTFChars(env, text, NULL) : NULL;
+  const char *c_text = (*env)->GetStringUTFChars(env, text, NULL);
+  const c_text_lenght = (*env)->GetStringUTFLength(env, text);
   unsigned int unique_identifier;
   espeak_Synth(
       c_text,
-      strlen(c_text),
+      c_text_lenght,
       0,
       POS_CHARACTER,
       0,

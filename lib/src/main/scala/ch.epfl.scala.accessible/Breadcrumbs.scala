@@ -1,8 +1,12 @@
 package ch.epfl.scala.accessible
 
 import scala.meta._
+import java.nio.file.Path
 
 object Breadcrumbs {
+  def apply(path: Path, offset: Offset): String = 
+    apply(parse(path), offset)
+
   def apply(tree: Tree, offset: Offset): String = {
     val visited = List.newBuilder[Tree]
     object visit extends Traverser {
@@ -15,7 +19,8 @@ object Breadcrumbs {
       }
     }
     visit(tree)
+
     val trees = visited.result()
-    trees.map(Summary.visitDefiniton).filterNot(_.isEmpty).mkString(", ")
+    trees.map(Summary.visitDefinition).filterNot(_.isEmpty).mkString(", ")
   }
 }
